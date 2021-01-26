@@ -1,0 +1,54 @@
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div.results-box {
+    width: 30%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    background: white;
+    border: black 3px solid;
+    border-radius: 3px;
+    font-size: 1rem;
+    border-collapse: collapse;
+}
+
+th {
+    height: 50px;
+    width: 100%;
+    padding: 0px 10px;
+    background: rgb(27, 27, 27);
+    color: white;
+}
+
+tr {
+    height: 35px;
+    width: 100%;
+    border-top: 1px black solid;
+}
+
+td {
+    padding: 0px 10px;
+}
+
+.pokemon-name  {
+    text-align: left;
+}
+
+.seen {
+    text-align: center;
+}
+
+.caught {
+    text-align: center;
+}

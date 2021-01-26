@@ -47,7 +47,7 @@ while (anyOfThePokemonMatch) {
         - in utils.js
             //- renderPokemon
 
-            - renderThreeRandomPokemon function
+            //- renderThreeRandomPokemon function
                 - while 
 
                 this function brings everything together
@@ -59,32 +59,33 @@ while (anyOfThePokemonMatch) {
             //- getPokeStats
                 - localstorage
 
-            - incrementSeenPoke
+            //- incrementSeenPoke
                 - if set /else ++
 
-            - incrementCaughtPoke
+            //- incrementCaughtPoke
                 ++
 
             //- findByID
                 - copy from ghosts
 
         - in app.js 
-            - onload
+            //- onload
 
-            - on click
+            //- on click
 
-            - after 10 rounds send to results page.
+            //- after 10 rounds send to results page.
 
 
 ## Results Page
     
     - HTML
-        - Table or div with list for results: seen and caught
-        - Dummy data to refine CSS
+        //- Table or div with list for results: seen and caught
+        //- Dummy data to refine CSS
     
     - CSS 
-        -Refine, bebe
+        //- Refine, bebe
 
     - JS
-        - getPokestats.
+        - getPokedex.
+        - renderLineItems()
         - append to table.

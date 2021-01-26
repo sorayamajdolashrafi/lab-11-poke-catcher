@@ -3,11 +3,9 @@ import { renderPokemon } from './renderPokemon.js';
 import { pokemon } from './data.js';
 
 let numberOfTurns = 0;
-let seen = 0;
-let caught = 0;
 
 export function findById(id, array) {
-    console.log(id, array);
+
     for (let item of array) {
         if (item.id === id) {
             return item;
