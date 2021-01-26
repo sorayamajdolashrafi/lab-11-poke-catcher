@@ -1,7 +1,8 @@
 // IMPORT MODULES under test here:
 import { renderPokemon } from '../renderPokemon.js';
 import { findById } from '../utils.js';
-import { getPokedex, savePokedex } from '../localStorage-utils.js';
+import { getPokedex, savePokedex, newGame } from '../localStorage-utils.js';
+import { renderLineItems } from '../results/render-line-items.js';
 
 const test = QUnit.test;
 
@@ -190,6 +191,58 @@ test('should check to see if there is a pokedex, if so return pokedex', (expect)
     const actual = getPokedex();
 
     expect.deepEqual(actual, expected);
+});
+
+// newGame test
+test('should reset localStorage to an empty array', (expect) => {
+    
+    const pokedex = [
+        {
+            id: 1,
+            name: 'zorua',
+        },
+        {
+            id: 2,
+            name: 'charmander',
+            
+        },
+        {
+            id: 3,
+            name: 'mimikyu',
+        }
+    ];
+    const stringPokedex = JSON.stringify(pokedex);
+    const pokeKey = 'pokeData';
+    localStorage.setItem(pokeKey, stringPokedex);
+    newGame();
+    
+    const expected = '[]';
+    
+    const actual = localStorage.getItem(pokeKey);
+
+    expect.equal(actual, expected);
+});
+
+// renderLineItems
+test('should take in localStorage data and return tr', (expect) => {
+    
+    const pokemons = {
+        id: 1,
+        name: 'zorua',
+    };
+    const pokedex = {
+        id: 1,
+        seen: 2,
+        caught: 1
+    };
+
+    const expected = `<tr class="pokemon-item"><td class="pokemon-name">zorua</td><td class="seen">2</td><td class="caught">1</td></tr>`;
+    
+    const actual = renderLineItems(pokedex, pokemons);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual.outerHTML, expected);
 });
 
 /*

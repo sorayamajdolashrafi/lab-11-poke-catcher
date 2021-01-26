@@ -91,8 +91,8 @@ while (anyOfThePokemonMatch) {
         //- append to table.
 
     - New Game
-        - html button
-        - css refine
+        //- html button
+        //- css refine
         - js
             - dom element
             - clearGame() in localStorage-utils.js

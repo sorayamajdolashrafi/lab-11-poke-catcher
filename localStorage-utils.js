@@ -57,3 +57,9 @@ export function incrementCaughtPokes(id) {
     savePokedex(pokedex);
 
 }
+
+export function newGame() {
+    const stringEmptyPokedex = JSON.stringify(emptyPokedex);
+
+    localStorage.setItem(pokeKey, stringEmptyPokedex);
+}
