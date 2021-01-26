@@ -3,7 +3,7 @@ import { renderPokemon } from '../renderPokemon.js';
 import { findById } from '../utils.js';
 import { getPokedex, savePokedex, newGame } from '../localStorage-utils.js';
 import { renderLineItems } from '../results/render-line-items.js';
-import { chartLabels } from '../results/chart-utils.js';
+import { chartLabels, seenData } from '../results/chart-utils.js';
 
 const test = QUnit.test;
 
@@ -280,12 +280,38 @@ test('should take in the pokedex from localStorage and make an array of the name
             caught: 1
         }
     ];
-    /*const stringPokedex = JSON.stringify(pokedex);
-    localStorage.setItem('key', stringPokedex);*/
     
     const expected = ['zorua', 'charmander', 'mimikyu'];
     
     const actual = chartLabels(pokedex, pokemon);
+
+    expect.deepEqual(actual, expected);
+});
+
+// seenData
+test('should take in the pokedex from localStorage and make an array of the number of times seen', (expect) => {
+
+    const pokedex = [
+        {
+            id: 1,
+            seen: 2,
+            caught: 2
+        },
+        {
+            id: 2,
+            seen: 5,
+            caught: 3
+        },
+        {
+            id: 3,
+            seen: 8,
+            caught: 1
+        }
+    ];
+    
+    const expected = [2, 5, 8];
+    
+    const actual = seenData(pokedex);
 
     expect.deepEqual(actual, expected);
 });

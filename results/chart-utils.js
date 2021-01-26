@@ -12,5 +12,17 @@ export function chartLabels(pokedex, pokemon) {
     }
     // return nameArray;
     return nameArray;
+}
 
+export function seenData(pokedex) {
+
+    const seenArray = [];
+
+    for (let item of pokedex) {
+        const seenResult = item.seen;
+
+        seenArray.push(seenResult);
+    }
+
+    return seenArray;
 }
