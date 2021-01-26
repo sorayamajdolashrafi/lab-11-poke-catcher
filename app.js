@@ -1,5 +1,6 @@
-// import functions and grab DOM elements
+import { setOfThreePokemon } from './utils.js';
 
-// initialize state
+setOfThreePokemon();
 
-// set event listeners to update state and DOM
+console.log('sweet birthday baby');
+
