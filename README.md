@@ -41,7 +41,7 @@ while (anyOfThePokemonMatch) {
 
     - JS
 
-        - Add data.js for the pokemon
+        //- Add data.js for the pokemon
             - 30 pokemon
 
         - in utils.js
