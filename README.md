@@ -78,14 +78,22 @@ while (anyOfThePokemonMatch) {
 
 ## Results Page
     
-    - HTML
+    //- HTML
         //- Table or div with list for results: seen and caught
         //- Dummy data to refine CSS
     
-    - CSS 
+    //- CSS 
         //- Refine, bebe
 
-    - JS
-        - getPokedex.
-        - renderLineItems()
-        - append to table.
+    //- JS
+        //- getPokedex.
+        //- renderLineItems()
+        //- append to table.
+
+    - New Game
+        - html button
+        - css refine
+        - js
+            - dom element
+            - clearGame() in localStorage-utils.js
+            - eventListener in results.js
