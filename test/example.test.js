@@ -3,6 +3,7 @@ import { renderPokemon } from '../renderPokemon.js';
 import { findById } from '../utils.js';
 import { getPokedex, savePokedex, newGame } from '../localStorage-utils.js';
 import { renderLineItems } from '../results/render-line-items.js';
+import { chartLabels } from '../results/chart-utils.js';
 
 const test = QUnit.test;
 
@@ -243,6 +244,50 @@ test('should take in localStorage data and return tr', (expect) => {
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
+});
+
+// chartLabels
+test('should take in the pokedex from localStorage and make an array of the names', (expect) => {
+    
+    const pokemon = [
+        {
+            id: 1,
+            name: 'zorua',
+        },
+        {
+            id: 2,
+            name: 'charmander',
+        },
+        {
+            id: 3,
+            name: 'mimikyu',
+        },
+    ];
+    const pokedex = [
+        {
+            id: 1,
+            seen: 2,
+            caught: 2
+        },
+        {
+            id: 2,
+            seen: 5,
+            caught: 3
+        },
+        {
+            id: 3,
+            seen: 8,
+            caught: 1
+        }
+    ];
+    /*const stringPokedex = JSON.stringify(pokedex);
+    localStorage.setItem('key', stringPokedex);*/
+    
+    const expected = ['zorua', 'charmander', 'mimikyu'];
+    
+    const actual = chartLabels(pokedex, pokemon);
+
+    expect.deepEqual(actual, expected);
 });
 
 /*

@@ -93,7 +93,25 @@ while (anyOfThePokemonMatch) {
     - New Game
         //- html button
         //- css refine
-        - js
+        //- js
             - dom element
             - clearGame() in localStorage-utils.js
             - eventListener in results.js
+
+## Chart
+    - Add a chart to visualize the results from chart.js
+        - chart for number of caught
+        - chart for number of seen
+
+        - a function that uses localStorage to pull label name from id
+        - a function that uses localStorage to pull dataset from seen
+        - a function that uses localStorage to pull dataset from caught
+
+    - Stretch:
+        - type
+        - ratings
+        - seen but not caught
+    - Stretch:
+        - Save session results in a seperate array.
+        - Create a third page for all session results.
+        - Chart that bebe.
