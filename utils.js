@@ -2,9 +2,10 @@ import { incrementSeenPokes, incrementCaughtPokes } from './localStorage-utils.j
 import { renderPokemon } from './renderPokemon.js';
 import { pokemon } from './data.js';
 
+const pokeBox = document.getElementById('poke-box');
+const caughtMessage = document.getElementById('caught-message');
+
 let numberOfTurns = 0;
-let seen = 0;
-let caught = 0;
 
 export function findById(id, array) {
 
@@ -15,7 +16,7 @@ export function findById(id, array) {
     }
 }
 
-export function getRandomPokemon(pokemon) {
+export function getRandomPokemon() {
     const randomPokemon = Math.floor(Math.random() * pokemon.length);
 
     return pokemon[randomPokemon];
@@ -23,16 +24,16 @@ export function getRandomPokemon(pokemon) {
 
 export function setOfThreePokemon() {
     //with every set number of turns increases
-    ++numberOfTurns;
+    numberOfTurns++;
     // grabs random pokemon
-    let pokemonOne = getRandomPokemon(pokemon);
-    let pokemonTwo = getRandomPokemon(pokemon);
-    let pokemonThree = getRandomPokemon(pokemon);
+    let pokemonOne = getRandomPokemon();
+    let pokemonTwo = getRandomPokemon();
+    let pokemonThree = getRandomPokemon();
     // check if any of the pokemon are the same by id, if so rerun set
     while (pokemonOne.id === pokemonTwo.id || pokemonTwo.id === pokemonThree.id || pokemonOne.id === pokemonThree.id) {
-        pokemonOne = getRandomPokemon(pokemon);
-        pokemonTwo = getRandomPokemon(pokemon);
-        pokemonThree = getRandomPokemon(pokemon);
+        pokemonOne = getRandomPokemon();
+        pokemonTwo = getRandomPokemon();
+        pokemonThree = getRandomPokemon();
     }
 
     renderPokemon(pokemonOne);
@@ -42,6 +43,10 @@ export function setOfThreePokemon() {
     incrementSeenPokes(pokemonOne.id);
     incrementSeenPokes(pokemonTwo.id);
     incrementSeenPokes(pokemonThree.id);
+
+    pokeBox.append(pokemonOne, pokemonTwo, pokemonThree);
+
+    caughtMessage.textContent = `you've caught ${numberOfTurns} pokemon!`;
 
 }
 

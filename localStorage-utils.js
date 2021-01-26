@@ -27,16 +27,17 @@ export function savePokedex(pokedex) {
     localStorage.setItem(pokeKey, stringPokedex);
 }
 
-export function incrementSeenPokes(id, seen) {
+export function incrementSeenPokes(id) {
     
     const pokedex = getPokedex();
-    const pokemon = findById(id, seen);
+    const pokemon = findById(id, pokedex);
     
     if (pokemon) {
         pokemon.seen++;
     }
     else {
         const newPokemon = {
+            name: pokemon.name,
             id: id,
             seen: 1,
             caught: 0,
@@ -44,12 +45,13 @@ export function incrementSeenPokes(id, seen) {
 
         pokedex.push(newPokemon);
     }
+    savePokedex(pokedex);
 }
 
 export function incrementCaughtPokes(id) {
     
     const pokedex = getPokedex();
-    const pokemon = findById(id, seen);
+    const pokemon = findById(id, pokedex);
     
     if (pokemon) {
         pokemon.caught++;
