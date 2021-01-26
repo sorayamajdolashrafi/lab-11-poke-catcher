@@ -37,7 +37,6 @@ export function incrementSeenPokes(id) {
     }
     else {
         const newPokemon = {
-            name: name,
             id: id,
             seen: 1,
             caught: 0,
@@ -53,8 +52,8 @@ export function incrementCaughtPokes(id) {
     const pokedex = getPokedex();
     const pokemon = findById(id, pokedex);
     
-    if (pokemon) {
-        pokemon.caught++;
-    }
+    pokemon.caught++;
+    
     savePokedex(pokedex);
+
 }

@@ -150,7 +150,6 @@ test('should take pokemon in pokedex and save to locaStorage', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-
 // getPokedex test
 test('should check to see if there is a pokedex, if so return pokedex', (expect) => {
 

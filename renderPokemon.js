@@ -18,7 +18,7 @@ export function renderPokemon(pokemon) {
     img.src = `../assets/pokemon-images/${pokemon.img}`;
     img.alt = `${pokemon.name} pokemon`;
     img.addEventListener('click', () => {
-        catchPokemon();
+        catchPokemon(pokemon.id);
     });
     label.append(img);
 

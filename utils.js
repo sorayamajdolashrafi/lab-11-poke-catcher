@@ -3,9 +3,11 @@ import { renderPokemon } from './renderPokemon.js';
 import { pokemon } from './data.js';
 
 let numberOfTurns = 0;
+let seen = 0;
+let caught = 0;
 
 export function findById(id, array) {
-
+    console.log(id, array);
     for (let item of array) {
         if (item.id === id) {
             return item;
@@ -20,6 +22,8 @@ export function getRandomPokemon() {
 }
 
 export function catchPokemon(pokemon) {
+    //with every set number of turns increases
+    numberOfTurns++;
     incrementCaughtPokes(pokemon);
 
     if (numberOfTurns < 10) {
@@ -33,8 +37,8 @@ export function catchPokemon(pokemon) {
 export function setOfThreePokemon() {
     const pokeBox = document.getElementById('poke-box');
     const caughtMessage = document.getElementById('caught-message');
-    //with every set number of turns increases
-    numberOfTurns++;
+    
+    
     // grabs random pokemon
     let pokemonOne = getRandomPokemon();
     let pokemonTwo = getRandomPokemon();
@@ -54,8 +58,9 @@ export function setOfThreePokemon() {
     incrementSeenPokes(pokemonTwo.id);
     incrementSeenPokes(pokemonThree.id);
 
-    caughtMessage.textContent = `you've caught ${numberOfTurns - 1} pokemon!`;
+    caughtMessage.textContent = `you've caught ${numberOfTurns} pokemon!`;
 
+    pokeBox.textContent = '';
     pokeBox.append(pokemonOneImage, pokemonTwoImage, pokemonThreeImage);
 
 }
