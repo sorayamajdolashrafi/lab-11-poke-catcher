@@ -12,10 +12,12 @@ export function renderPokemon(pokemon) {
 
     const img = document.createElement('img');
     img.classList.add('pokemon-image');
-    img.src = `../assets/pokemon/${pokemon.image}`;
+    img.src = `../assets/pokemon-images/${pokemon.img}`;
     img.alt = `${pokemon.name} pokemon`;
     label.append(img);
 
     return label;
+
+    console.log('aaaaaaah');
 
 }

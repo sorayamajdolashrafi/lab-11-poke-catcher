@@ -50,10 +50,10 @@ while (anyOfThePokemonMatch) {
             - renderThreeRandomPokemon function
                 - while 
 
-            - setPokeStats
+            //- setPokeStats
                 - localStorage
 
-            - getPokeStats
+            //- getPokeStats
                 - localstorage
 
             - incrementSeenPoke
@@ -62,7 +62,7 @@ while (anyOfThePokemonMatch) {
             - incrementCaughtPoke
                 ++
 
-            - findByID
+            //- findByID
                 - copy from ghosts
 
         - in app.js 
