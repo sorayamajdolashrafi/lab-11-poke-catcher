@@ -3,7 +3,7 @@ import { renderPokemon } from '../renderPokemon.js';
 import { findById } from '../utils.js';
 import { getPokedex, savePokedex, newGame } from '../localStorage-utils.js';
 import { renderLineItems } from '../results/render-line-items.js';
-import { chartLabels, seenData } from '../results/chart-utils.js';
+import { chartLabels, seenData, caughtData } from '../results/chart-utils.js';
 
 const test = QUnit.test;
 
@@ -312,6 +312,34 @@ test('should take in the pokedex from localStorage and make an array of the numb
     const expected = [2, 5, 8];
     
     const actual = seenData(pokedex);
+
+    expect.deepEqual(actual, expected);
+});
+
+// caughtData
+test('should take in the pokedex from localStorage and make an array of the number of times caught', (expect) => {
+
+    const pokedex = [
+        {
+            id: 1,
+            seen: 2,
+            caught: 2
+        },
+        {
+            id: 2,
+            seen: 5,
+            caught: 3
+        },
+        {
+            id: 3,
+            seen: 8,
+            caught: 1
+        }
+    ];
+    
+    const expected = [2, 3, 1];
+    
+    const actual = caughtData(pokedex);
 
     expect.deepEqual(actual, expected);
 });

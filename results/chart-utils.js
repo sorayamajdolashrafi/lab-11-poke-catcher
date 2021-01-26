@@ -26,3 +26,16 @@ export function seenData(pokedex) {
 
     return seenArray;
 }
+
+export function caughtData(pokedex) {
+
+    const caughtArray = [];
+
+    for (let item of pokedex) {
+        const caughtResult = item.caught;
+
+        caughtArray.push(caughtResult);
+    }
+
+    return caughtArray;
+}
