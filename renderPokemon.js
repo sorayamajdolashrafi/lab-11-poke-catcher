@@ -20,7 +20,6 @@ export function renderPokemon(pokemon) {
     img.addEventListener('click', () => {
         catchPokemon();
     });
-
     label.append(img);
 
     return label;

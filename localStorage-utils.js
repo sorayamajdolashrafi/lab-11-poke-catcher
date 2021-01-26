@@ -37,7 +37,7 @@ export function incrementSeenPokes(id) {
     }
     else {
         const newPokemon = {
-            name: pokemon.name,
+            name: name,
             id: id,
             seen: 1,
             caught: 0,

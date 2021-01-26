@@ -2,9 +2,6 @@ import { incrementSeenPokes, incrementCaughtPokes } from './localStorage-utils.j
 import { renderPokemon } from './renderPokemon.js';
 import { pokemon } from './data.js';
 
-const pokeBox = document.getElementById('poke-box');
-const caughtMessage = document.getElementById('caught-message');
-
 let numberOfTurns = 0;
 
 export function findById(id, array) {
@@ -22,7 +19,20 @@ export function getRandomPokemon() {
     return pokemon[randomPokemon];
 }
 
+export function catchPokemon(pokemon) {
+    incrementCaughtPokes(pokemon);
+
+    if (numberOfTurns < 10) {
+        setOfThreePokemon();
+    } else {
+
+        window.location = './results/index.html';
+    }
+}
+
 export function setOfThreePokemon() {
+    const pokeBox = document.getElementById('poke-box');
+    const caughtMessage = document.getElementById('caught-message');
     //with every set number of turns increases
     numberOfTurns++;
     // grabs random pokemon
@@ -36,27 +46,16 @@ export function setOfThreePokemon() {
         pokemonThree = getRandomPokemon();
     }
 
-    renderPokemon(pokemonOne);
-    renderPokemon(pokemonTwo);
-    renderPokemon(pokemonThree);
+    const pokemonOneImage = renderPokemon(pokemonOne);
+    const pokemonTwoImage = renderPokemon(pokemonTwo);
+    const pokemonThreeImage = renderPokemon(pokemonThree);
 
     incrementSeenPokes(pokemonOne.id);
     incrementSeenPokes(pokemonTwo.id);
     incrementSeenPokes(pokemonThree.id);
 
-    pokeBox.append(pokemonOne, pokemonTwo, pokemonThree);
+    caughtMessage.textContent = `you've caught ${numberOfTurns - 1} pokemon!`;
 
-    caughtMessage.textContent = `you've caught ${numberOfTurns} pokemon!`;
+    pokeBox.append(pokemonOneImage, pokemonTwoImage, pokemonThreeImage);
 
-}
-
-export function catchPokemon() {
-    incrementCaughtPokes(pokemon.id);
-
-    if (numberOfTurns < 10) {
-        setOfThreePokemon();
-    } else {
-
-        window.location = './results/index.html';
-    }
 }
