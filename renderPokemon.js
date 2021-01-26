@@ -1,3 +1,6 @@
+
+import { catchPokemon } from './utils.js';
+
 export function renderPokemon(pokemon) {
 
     const label = document.createElement('label');
@@ -14,10 +17,12 @@ export function renderPokemon(pokemon) {
     img.classList.add('pokemon-image');
     img.src = `../assets/pokemon-images/${pokemon.img}`;
     img.alt = `${pokemon.name} pokemon`;
+    img.addEventListener('click', () => {
+        catchPokemon();
+    });
+
     label.append(img);
 
     return label;
-
-    console.log('aaaaaaah');
 
 }

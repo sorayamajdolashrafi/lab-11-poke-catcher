@@ -27,21 +27,32 @@ export function savePokedex(pokedex) {
     localStorage.setItem(pokeKey, stringPokedex);
 }
 
-export function incrementSeenPokes(id, pokemon) {
-    findById(id, pokemon);
-
-    if (!id) {
-        pokedex.push;
-        seen = 0;
+export function incrementSeenPokes(id, seen) {
+    
+    const pokedex = getPokedex();
+    const pokemon = findById(id, seen);
+    
+    if (pokemon) {
+        pokemon.seen++;
     }
     else {
-        seen++;
+        const newPokemon = {
+            id: id,
+            seen: 1,
+            caught: 0,
+        };
+
+        pokedex.push(newPokemon);
     }
 }
 
-export function incrementCaughtPokes(id, pokemon) {
-    findById(id, pokemon);
-    if (id) {
-        caught++;
+export function incrementCaughtPokes(id) {
+    
+    const pokedex = getPokedex();
+    const pokemon = findById(id, seen);
+    
+    if (pokemon) {
+        pokemon.caught++;
     }
+    savePokedex(pokedex);
 }

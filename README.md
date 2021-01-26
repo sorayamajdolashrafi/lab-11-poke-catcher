@@ -50,6 +50,9 @@ while (anyOfThePokemonMatch) {
             - renderThreeRandomPokemon function
                 - while 
 
+                this function brings everything together
+
+
             //- setPokeStats
                 - localStorage
 

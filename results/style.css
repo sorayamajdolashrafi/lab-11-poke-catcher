@@ -1,0 +1,88 @@
+
+body, html {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background: rgb(255, 229, 82);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 2px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 2px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.4rem;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+div.poke-box {
+    margin: 25px;
+}
+
+input.pokemon {
+    position: absolute;
+    opacity: 0;
+}
+
+input.pokemon + img {
+    filter: grayscale(100%);
+    transition: .2s ease-in-out;
+    
+}
+
+input.pokemon + img:hover {
+    filter: saturate(100%);
+}
+
+input.pokemon + img:active {
+    filter: saturate(100%);
+    transition: .1s ease-in;
+    transform: scale(.5);
+}
+
+input.pokemon + img:after {
+    filter: saturate(100%);
+    transform: scale(.5);
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
