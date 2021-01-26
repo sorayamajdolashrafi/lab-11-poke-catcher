@@ -45,6 +45,8 @@ while (anyOfThePokemonMatch) {
             - 30 pokemon
 
         - in utils.js
+            //- renderPokemon
+
             - renderThreeRandomPokemon function
                 - while 
 
