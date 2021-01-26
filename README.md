@@ -103,9 +103,9 @@ while (anyOfThePokemonMatch) {
         - chart for number of caught
         - chart for number of seen
 
-        - a function that uses localStorage to pull label name from id
-        - a function that uses localStorage to pull dataset from seen
-        - a function that uses localStorage to pull dataset from caught
+        //- a function that uses localStorage to pull label name from id
+        //- a function that uses localStorage to pull dataset from seen
+        //- a function that uses localStorage to pull dataset from caught
 
     - Stretch:
         - type

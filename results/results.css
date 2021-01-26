@@ -10,6 +10,7 @@ main {
 div.results-box {
     width: 30%;
     height: auto;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +20,6 @@ div.results-box {
 table {
     width: 100%;
     height: auto;
-    margin-top: 50px;
     background: white;
     border: black 3px solid;
     border-radius: 3px;
