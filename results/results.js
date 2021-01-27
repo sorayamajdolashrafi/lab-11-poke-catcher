@@ -62,17 +62,25 @@ var chart = new Chart(ctx, { //eslint-disable-line
         },
         circumference: 1 * Math.PI,
         rotation: 1 * Math.PI,
-        /*tooltips: {
+        tooltips: {
+            cornerRadius: 0,
+            bodyFontFamily: "'Open Sans', sans-serif",
+            bodyFontSize: 14,
+            bodyFontStyle: '600',
+            bodyFontColor: '#000000',
+            borderColor: 'rgba(0, 0, 0, 1)',
+            borderWidth: 2,
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
             callbacks: {
                 afterLabel: function(tooltipItem, datasetIndex) {
                     
-                    if (tooltipItem.dataPoint.y) {
+                    if (tooltipItem.datasetIndex === 0) {
                         return 'seen';
                     } else {
                         return 'caught';
                     }
                 },
             }
-        },*/
+        },
     }
 });

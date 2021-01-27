@@ -65,7 +65,7 @@ input.pokemon + img {
 }
 
 input.pokemon + img:hover {
-    filter: saturate(100%);
+    filter: saturate(200%);
 }
 
 input.pokemon + img:active {

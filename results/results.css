@@ -23,7 +23,7 @@ table {
     background: white;
     border: black 3px solid;
     border-radius: 3px;
-    font-size: 1rem;
+    font-size: .9rem;
     border-collapse: collapse;
 }
 
@@ -43,6 +43,11 @@ tr {
 
 td {
     padding: 0px 10px;
+}
+
+img {
+    height: 35px;
+    width: auto;
 }
 
 .pokemon-name  {
