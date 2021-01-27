@@ -30,7 +30,7 @@ test('should take in pokemon and return a label', (expect) => {
         pokedex:'https://www.pokemon.com/us/pokedex/zorua'
     };
 
-    const expected = `<label class="pokemon-label"><input type="radio" name="pokemon" id="pokemon" class="pokemon"><img class="pokemon-image" src="../assets/pokemon-images/zorua.png" alt="zorua pokemon"></label>`;
+    const expected = `<label class="pokemon-label"><input type="radio" name="pokemon" id="pokemon" class="pokemon"><img class="pokemon-image" src="./assets/pokemon-images/zorua.png" alt="zorua pokemon"></label>`;
 
     const actual = renderPokemon(pokemon);
 
