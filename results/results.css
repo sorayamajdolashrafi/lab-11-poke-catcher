@@ -18,7 +18,7 @@ div.results-box {
 }
 
 table {
-    width: 100%;
+    width: 298px;
     height: auto;
     background: white;
     border: black 3px solid;
@@ -66,10 +66,6 @@ button {
     border: white 3px solid;
     border-radius: 5px;
     margin: 25px;
-    
-
-    
-
 }
 
 button:hover {
@@ -85,3 +81,4 @@ button:focus {
     border:black 3px solid;
     border-radius: 5px;
 }
+

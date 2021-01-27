@@ -34,7 +34,6 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, { //eslint-disable-line
     // The type of chart we want to create
     type: 'doughnut',
-
     // The data for our dataset
     data: {
         labels: labelArray,
@@ -53,17 +52,27 @@ var chart = new Chart(ctx, { //eslint-disable-line
             },
         ]
     },
-
     // Configuration options go here
     options: {
-        responsive: true,
-        legend: {
-            poistition: top,
-        },
+        responsive: false,
+        maintainAspectRatio: false,
+        legend: false,
         animation : {
             animateRotate: true,
         },
         circumference: 1 * Math.PI,
         rotation: 1 * Math.PI,
+        tooltips: {
+            toolTipContent : "x: {'seen'}, y: {'caught'}",
+            callbacks: {
+                afterLabel: function(tooltipItem, dataset) {
+                    if (dataset === 0) {
+                        return 'seen';
+                    } else {
+                        return 'caught';
+                    }
+                },
+            }
+        },
     }
 });
