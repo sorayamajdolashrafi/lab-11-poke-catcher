@@ -3,6 +3,7 @@ import { renderPokemon } from '../renderPokemon.js';
 import { findById } from '../utils.js';
 import { getPokedex, savePokedex, newGame } from '../localStorage-utils.js';
 import { renderLineItems } from '../results/render-line-items.js';
+import { chartLabels, seenData, caughtData } from '../results/chart-utils.js';
 
 const test = QUnit.test;
 
@@ -29,7 +30,7 @@ test('should take in pokemon and return a label', (expect) => {
         pokedex:'https://www.pokemon.com/us/pokedex/zorua'
     };
 
-    const expected = `<label class="pokemon-label"><input type="radio" name="pokemon" id="pokemon" class="pokemon"><img class="pokemon-image" src="../assets/pokemon-images/zorua.png" alt="zorua pokemon"></label>`;
+    const expected = `<label class="pokemon-label"><input type="radio" name="pokemon" id="pokemon" class="pokemon"><img class="pokemon-image" src="./assets/pokemon-images/zorua.png" alt="zorua pokemon"></label>`;
 
     const actual = renderPokemon(pokemon);
 
@@ -229,6 +230,7 @@ test('should take in localStorage data and return tr', (expect) => {
     const pokemons = {
         id: 1,
         name: 'zorua',
+        img: `zorua.png`,
     };
     const pokedex = {
         id: 1,
@@ -236,13 +238,111 @@ test('should take in localStorage data and return tr', (expect) => {
         caught: 1
     };
 
-    const expected = `<tr class="pokemon-item"><td class="pokemon-name">zorua</td><td class="seen">2</td><td class="caught">1</td></tr>`;
+    const expected = `<tr class="pokemon-item"><img class="pokemon-image" src="../assets/pokemon-images/zorua.png" alt="zorua pokemon"><td class="pokemon-name">zorua</td><td class="seen">2</td><td class="caught">1</td></tr>`;
     
     const actual = renderLineItems(pokedex, pokemons);
 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
+});
+
+// chartLabels
+test('should take in the pokedex from localStorage and make an array of the names', (expect) => {
+    
+    const pokemon = [
+        {
+            id: 1,
+            name: 'zorua',
+        },
+        {
+            id: 2,
+            name: 'charmander',
+        },
+        {
+            id: 3,
+            name: 'mimikyu',
+        },
+    ];
+    const pokedex = [
+        {
+            id: 1,
+            seen: 2,
+            caught: 2
+        },
+        {
+            id: 2,
+            seen: 5,
+            caught: 3
+        },
+        {
+            id: 3,
+            seen: 8,
+            caught: 1
+        }
+    ];
+    
+    const expected = ['zorua', 'charmander', 'mimikyu'];
+    
+    const actual = chartLabels(pokedex, pokemon);
+
+    expect.deepEqual(actual, expected);
+});
+
+// seenData
+test('should take in the pokedex from localStorage and make an array of the number of times seen', (expect) => {
+
+    const pokedex = [
+        {
+            id: 1,
+            seen: 2,
+            caught: 2
+        },
+        {
+            id: 2,
+            seen: 5,
+            caught: 3
+        },
+        {
+            id: 3,
+            seen: 8,
+            caught: 1
+        }
+    ];
+    
+    const expected = [2, 5, 8];
+    
+    const actual = seenData(pokedex);
+
+    expect.deepEqual(actual, expected);
+});
+
+// caughtData
+test('should take in the pokedex from localStorage and make an array of the number of times caught', (expect) => {
+
+    const pokedex = [
+        {
+            id: 1,
+            seen: 2,
+            caught: 2
+        },
+        {
+            id: 2,
+            seen: 5,
+            caught: 3
+        },
+        {
+            id: 3,
+            seen: 8,
+            caught: 1
+        }
+    ];
+    
+    const expected = [2, 3, 1];
+    
+    const actual = caughtData(pokedex);
+
+    expect.deepEqual(actual, expected);
 });
 
 /*

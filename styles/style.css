@@ -3,7 +3,7 @@ body, html {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    background: rgb(255, 237, 134);
+    background: rgb(255, 238, 85);
     height: 100%;
     width: 100%;
     display: flex;
@@ -65,7 +65,7 @@ input.pokemon + img {
 }
 
 input.pokemon + img:hover {
-    filter: saturate(100%);
+    filter: saturate(200%);
 }
 
 input.pokemon + img:active {

@@ -11,6 +11,12 @@ export function renderLineItems(pokedex, pokemon) {
     const tr = document.createElement('tr');
     tr.classList.add('pokemon-item');
 
+    const img = document.createElement('img');
+    img.classList.add('pokemon-image');
+    img.src = `../assets/pokemon-images/${pokemon.img}`;
+    img.alt = `${pokemon.name} pokemon`;
+    tr.append(img);
+
     const tdPokemon = document.createElement('td');
     tdPokemon.classList.add('pokemon-name');
     tdPokemon.textContent = pokemon.name;
