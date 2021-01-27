@@ -41,14 +41,14 @@ var chart = new Chart(ctx, { //eslint-disable-line
             {
                 label: 'seen',
                 data: seenArray,
-                backgroundColor: ['rgb(255, 51, 0)', 'rgb(255, 102, 0)', 'rgb(255, 255, 0)', 'rgb(128, 255, 0)', 'rgb(0, 223, 255)', 'rgb(0, 40, 255)', 'rgb(128, 0, 255)', 'rgb(255, 0, 255)', 'rgb(255, 0, 128)'],
-                borderColor: 'white',                
+                backgroundColor: ['rgb(255, 51, 0)', 'rgb(255, 102, 0)', 'rgb(255, 255, 0)', 'rgb(191, 255, 0)', 'rgb(0, 255, 0)', 'rgb(0, 223, 255)', 'rgb(0, 40, 255)', 'rgb(128, 0, 255)', 'rgb(255, 0, 255)', 'rgb(255, 0, 128)'],
+                borderColor: 'black',                
             },
             {
                 label: 'caught',
                 data: caughtArray,
-                backgroundColor: ['rgb(255, 51, 0)', 'rgb(255, 102, 0)', 'rgb(255, 255, 0)', 'rgb(128, 255, 0)', 'rgb(0, 223, 255)', 'rgb(0, 40, 255)', 'rgb(128, 0, 255)', 'rgb(255, 0, 255)', 'rgb(255, 0, 128)'],
-                borderColor: 'white',
+                backgroundColor: ['rgb(255, 51, 0)', 'rgb(255, 102, 0)', 'rgb(255, 255, 0)', 'rgb(191, 255, 0)', 'rgb(0, 255, 0)', 'rgb(0, 223, 255)', 'rgb(0, 40, 255)', 'rgb(128, 0, 255)', 'rgb(255, 0, 255)', 'rgb(255, 0, 128)'],
+                borderColor: 'black',
             },
         ]
     },
@@ -62,17 +62,17 @@ var chart = new Chart(ctx, { //eslint-disable-line
         },
         circumference: 1 * Math.PI,
         rotation: 1 * Math.PI,
-        tooltips: {
-            toolTipContent : "x: {'seen'}, y: {'caught'}",
+        /*tooltips: {
             callbacks: {
-                afterLabel: function(tooltipItem, dataset) {
-                    if (dataset === 0) {
+                afterLabel: function(tooltipItem, datasetIndex) {
+                    
+                    if (tooltipItem.dataPoint.y) {
                         return 'seen';
                     } else {
                         return 'caught';
                     }
                 },
             }
-        },
+        },*/
     }
 });

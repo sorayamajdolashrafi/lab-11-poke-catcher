@@ -18,7 +18,7 @@ div.results-box {
 }
 
 table {
-    width: 298px;
+    width: 300px;
     height: auto;
     background: white;
     border: black 3px solid;
@@ -63,7 +63,7 @@ button {
     color: rgb(27, 27, 27);
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    border: white 3px solid;
+    border: rgb(255, 102, 0) 3px solid;
     border-radius: 5px;
     margin: 25px;
 }
