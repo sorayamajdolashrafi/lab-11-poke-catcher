@@ -72,7 +72,7 @@ var chart = new Chart(ctx, { //eslint-disable-line
             borderWidth: 2,
             backgroundColor: 'rgba(255, 255, 255, 0.9)',
             callbacks: {
-                afterLabel: function(tooltipItem, datasetIndex) {
+                afterLabel: function(tooltipItem, datasetIndex) { //eslint-disable-line
                     
                     if (tooltipItem.datasetIndex === 0) {
                         return 'seen';

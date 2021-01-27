@@ -230,6 +230,7 @@ test('should take in localStorage data and return tr', (expect) => {
     const pokemons = {
         id: 1,
         name: 'zorua',
+        img: `zorua.png`,
     };
     const pokedex = {
         id: 1,
@@ -237,7 +238,7 @@ test('should take in localStorage data and return tr', (expect) => {
         caught: 1
     };
 
-    const expected = `<tr class="pokemon-item"><td class="pokemon-name">zorua</td><td class="seen">2</td><td class="caught">1</td></tr>`;
+    const expected = `<tr class="pokemon-item"><img class="pokemon-image" src="../assets/pokemon-images/zorua.png" alt="zorua pokemon"><td class="pokemon-name">zorua</td><td class="seen">2</td><td class="caught">1</td></tr>`;
     
     const actual = renderLineItems(pokedex, pokemons);
 
